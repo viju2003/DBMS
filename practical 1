@@ -1,0 +1,17 @@
+1.ACCOUNTS(ACC_NO,BRANCH_NAME,BALANCE)
+create table account(account_no int,branch_name varchar(50),balance int,primary key (account_no));
+
+2.BRANCH(BRANCH_NAME,BRANCH_CITY,ASSETS)
+create table branch(branch_name varchar(50),branch_city varchar (50),assets int);
+
+3.CUSTOMER (CUST_NAME,CUST_STREET,CUST_CITY)
+create table customer (cust_name varchar(50),cust_street varchar(50),primary key (cust_name));
+
+4.LOAN(LOAN_NO,BRACH_NAME,AMOUNT)
+create table depositor(cust_name varchar(50),account_no int);
+
+5.DEPOSIETOR(CUST_NAME,ACC_NO)
+create table depositor(cust_name varchar(50),account_no int, FOREIGN KEY (cust_name) REFERENCES customer(cust_name),FOREIGN KEY (account_no) REFERENCES account(account_no));
+
+6.BORROER(CUST_NAME,LOAN_NO)
+ create table borrow (customer_name varchar(50),loan_no int,FOREIGN KEY (loan_no) REFERENCES loan(loan_no));
