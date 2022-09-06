@@ -15,3 +15,6 @@ create table depositor(cust_name varchar(50),account_no int, FOREIGN KEY (cust_n
 
 6.BORROER(CUST_NAME,LOAN_NO)
  create table borrow (customer_name varchar(50),loan_no int,FOREIGN KEY (loan_no) REFERENCES loan(loan_no));
+
+QUESTION
+1.FIND THE NAMES OF ALL BRANCHES IN LOAN RELATION
