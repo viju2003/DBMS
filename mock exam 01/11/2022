@@ -1,0 +1,60 @@
+create database dypit;
+use dypit;
+ create table students(sname char(50),roll_no int,class char,primary key (sname));
+ create table teachers(tname char(50),dno int,dname char(50),experience int,salary int,date_of_joining int,primary key (tname));
+  insert into teachers values('vijay','1','computer','2','24000','2020');
+   insert into teachers values('jay','1','computer','4','25000','2018');
+   insert into teachers values('ajay','2','it','4','25600','2018');
+   insert into teachers values('ram','2','it','3','26000','2019');
+   insert into teachers values('sham','3','e&tc','3','26000','2019');
+    insert into teachers values('vishal','3','e&tc','3','24000','2019');
+     insert into students values('xyz','24','b');
+      insert into students values('abc','25','b');
+       insert into students values('vho','21','c');
+        insert into students values('rty','29','d');
+         insert into students values('ghj','28','d');
+         
+         Q (1)  FIND THE INFORMATION ABOUT TWO TEACHERS ?
+         ANS -   
+         
+         Q (2)  FIND THE INFORMATION ABOUT ALL TEACHAERS OF COMPUTER DEPARTMENT ?
+         ANS - 
+         
+         Q (3)  FIND TH INFORMATION ABOUT ALL TEACHERS OF COMPUETR,IT, AND E&TC DEPARTMENT ?
+         ANS -
+         
+         Q (4)  FIND TH INFORMATION ABOUT ALL TEACHERS OF COMPUETR,IT, AND E&TC DEPARTMENT HAVING SALARY GREATER THAN OR EQUAL TO 25000/- ?
+         ANS - 
+         
+         Q (5)  FIND THE STUDENT INFORMATION HAVING ROLL_NO=25 OR SNAME=XYZ ?
+         ANS -
+         
+         Q (6) UPDATETHE EXPERIENCE OF TTEACHER - PRAVEEN TO 10 YEARS ,IF THE ENTRY IS NOT AVAILABLE IN DATABASE CONSIDER THE ENTRY AS NEW ENTRY ?
+         ANS - 
+        
+         Q (7)  UPDATE THE DEPARTMENT OF ALL THE TEACHERS WORKING IN IT DEPARTMENT TO COMP ?
+         ANS - 
+         
+         Q (8) FIND THE TEACHERS NAME AND THEIR EXPETIENCE FROM TEACHER COLLECTION ?
+         ANS -
+         
+         Q (9) USING SAVE() METHOD INSERT ONE ENTRY IN DEPARTMENT COLLECTION ?
+         ANS - 
+         
+         Q (10) DELETE ALL THE DOCUMENTS FRO, TEACHER COLLECTION HAVING IT DEPT ?
+         ANS -
+         
+         Q (11) DISPLAY WITH PRETTY() METHOD , THE FIRST 5 DOCUMENTS IN TEACHER COLLECTION IN DECENDING ORDER ?
+         ANS - 
+        
+         Q (12)  
+         ANS - 
+         
+         Q (13)
+         ANS -
+         
+         Q (14)
+         ANS - 
+         
+        
+        
