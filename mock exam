@@ -18,13 +18,13 @@ use dypit;
          ANS -   
          
          Q (2)  FIND THE INFORMATION ABOUT ALL TEACHAERS OF COMPUTER DEPARTMENT ?
-         ANS - 
+         ANS -   Select * from TeacherS where DNAME="Computer";
          
          Q (3)  FIND TH INFORMATION ABOUT ALL TEACHERS OF COMPUETR,IT, AND E&TC DEPARTMENT ?
          ANS -
          
          Q (4)  FIND TH INFORMATION ABOUT ALL TEACHERS OF COMPUETR,IT, AND E&TC DEPARTMENT HAVING SALARY GREATER THAN OR EQUAL TO 25000/- ?
-         ANS - 
+         ANS -  Select * from TeacherS Where Salary>=25000;
          
          Q (5)  FIND THE STUDENT INFORMATION HAVING ROLL_NO=25 OR SNAME=XYZ ?
          ANS -
