@@ -8,8 +8,8 @@ use dypit;
    insert into teachers values('ram','2','it','3','26000','2019');
    insert into teachers values('sham','3','e&tc','3','26000','2019');
     insert into teachers values('vishal','3','e&tc','3','24000','2019');
-     insert into students values('xyz','24','b');
-      insert into students values('abc','25','b');
+     insert into students values('xyz','25','b');
+      insert into students values('abc','26','b');
        insert into students values('vho','21','c');
         insert into students values('rty','29','d');
          insert into students values('ghj','28','d');
@@ -21,13 +21,13 @@ use dypit;
          ANS -   Select * from TeacherS where DNAME="Computer";
          
          Q (3)  FIND TH INFORMATION ABOUT ALL TEACHERS OF COMPUETR,IT, AND E&TC DEPARTMENT ?
-         ANS -
+         ANS -  SELECT * FROM TEACHERS WHERE DNAME='COMPUTER' OR DNAME='IT' OR DNAME='E&TC';
          
          Q (4)  FIND TH INFORMATION ABOUT ALL TEACHERS OF COMPUETR,IT, AND E&TC DEPARTMENT HAVING SALARY GREATER THAN OR EQUAL TO 25000/- ?
          ANS -  Select * from TeacherS Where Salary>=25000;
          
          Q (5)  FIND THE STUDENT INFORMATION HAVING ROLL_NO=25 OR SNAME=XYZ ?
-         ANS -
+         ANS -  SELECT * FROM STUDENTS WHERE SNAME='XYZ' AND ROLL_NO=25;
          
          Q (6) UPDATETHE EXPERIENCE OF TTEACHER - PRAVEEN TO 10 YEARS ,IF THE ENTRY IS NOT AVAILABLE IN DATABASE CONSIDER THE ENTRY AS NEW ENTRY ?
          ANS - 
@@ -36,7 +36,7 @@ use dypit;
          ANS - 
          
          Q (8) FIND THE TEACHERS NAME AND THEIR EXPETIENCE FROM TEACHER COLLECTION ?
-         ANS -
+         ANS -  SELECT TNAME,EXPERIENCE FROM TEACHERS;
          
          Q (9) USING SAVE() METHOD INSERT ONE ENTRY IN DEPARTMENT COLLECTION ?
          ANS - 
