@@ -1,4 +1,4 @@
-create table Emp(eno int(10),ename varchar(10),job varchar(10), hiredate date,salary varchar(10),commision varchar(10),deptno varchar(20));
+create table Emp(eno int(50),ename varchar(50),job varchar(50), hiredate date,salary varchar(50),commision varchar(50),deptno varchar(20));
 create table dept(deptno varchar(20),deptname varchar(20),location varchar(20));
 ALTER TABLE Emp ADD PRIMARY KEY (eno);
 ALTER TABLE dept ADD PRIMARY KEY (deptno);
@@ -55,12 +55,12 @@ Q.2
 4. manages (employee name, manager name)
 
  create table employee(employeename varchar(20) primary key,street varchar(20),city varchar(20));
- insert into employee(employeename, street,city) values ('Neha','A street','A city');
- insert into employee(employeename, street,city) values ('Reesha','B street','B city');
- insert into employee(employeename, street,city) values ('Ritika','C street','C city');
- insert into employee(employeename, street,city) values ('Ritu','C street','C city');
- insert into employee(employeename, street,city) values ('Ryan','A street','A city');
- insert into employee(employeename, street,city) values ('Kelly','B street','B city');
+ insert into employee(employeename, street,city) values ('vijAY','A street','A city');
+ insert into employee(employeename, street,city) values ('ajay','B street','B city');
+ insert into employee(employeename, street,city) values ('jay','C street','C city');
+ insert into employee(employeename, street,city) values ('vishal','C street','C city');
+ insert into employee(employeename, street,city) values ('ram','A street','A city');
+ insert into employee(employeename, street,city) values ('sham','B street','B city');
 
  create table company(companyname varchar(20) primary key,city varchar(20));
  insert into company (companyname , city)values ('First Bank Corporation','A city');
@@ -70,17 +70,17 @@ Q.2
  insert into company (companyname , city)values('More Bank Corporation','B city');
 
  create table works(employeename varchar(20),companyname varchar(50),salary double);
- insert into works (employeename,companyname, salary)values('Neha','First Bank Corporation',40000);
- insert into works (employeename,companyname, salary)values('Reesha','Small Bank Corporation',30000);
- insert into works (employeename,companyname, salary)values('Ritika','No Bank Corporation',35000);
- insert into works (employeename,companyname, salary)values('Ritu','Small Bank Corporation',25000);
- insert into works (employeename,companyname, salary)values('Ryan','First Bank Corporation',15000);
- insert into works (employeename,companyname, salary)values('Kelly','First Bank Corporation',10000);
+ insert into works (employeename,companyname, salary)values('vijay','First Bank Corporation',40000);
+ insert into works (employeename,companyname, salary)values('jai','Small Bank Corporation',30000);
+ insert into works (employeename,companyname, salary)values('ajay','No Bank Corporation',35000);
+ insert into works (employeename,companyname, salary)values('vishal','Small Bank Corporation',25000);
+ insert into works (employeename,companyname, salary)values('ram','First Bank Corporation',15000);
+ insert into works (employeename,companyname, salary)values('sham','First Bank Corporation',10000);
 
  create table manages(employeename varchar(20),managername varchar(20));
- insert into manages (employeename,managername )values ('Neha','Ryan');
- insert into manages (employeename,managername )values('Neha','Kelly');
- insert into manages (employeename,managername )values('Reesha','Ritu');
+ insert into manages (employeename,managername )values ('vijay','ajay');
+ insert into manages (employeename,managername )values('jay','vishal');
+ insert into manages (employeename,managername )values('ram','sham');
 
 Give an expression in SQL for each of the following queries.
 
