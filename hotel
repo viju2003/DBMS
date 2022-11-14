@@ -115,7 +115,8 @@ SELECT r.* FROM Room r LEFT JOIN (SELECT g.guestname, h.hotelno, b.roomno FROM G
 SELECT COUNT(DISTINCT guestNo) FROM BookingWHERE (datefrom <='2022-08-01' AND dateto>='2022-08-01') OR (datefrom >='2022-08-01' AND datefrom <= '2022-08-31');
 
 4. Create index on one of the field and show is performance in query. 
-CREATE INDEX showON Hotel (hotelno, name);
+CREATE INDEX guestno ON Hotel (hotelno, name);
+
 
 5. List full details of all hotels. 
 select h.hotelno,h.name,h.city,r.type1,r.price from Hotel h, Room r ;
