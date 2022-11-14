@@ -12,9 +12,7 @@ alter table Project add primary key(project_id);
 
 alter table Emp add primary key(Emp_id);
 
-create table Assigned_To(project_id varchar(5),Emp_id int);
-
-//create table Assigned_To(project_id int, foreign key(project_id) references Project(project_id), Emp_id int , foreign key (Emp_id) references Employee(Emp_id) );
+create table Assigned_To(project_id varchar(5),Emp_id int ,project_id int, foreign key(project_id) references Project(project_id), Emp_id int , foreign key (Emp_id) references Employee(Emp_id) );
 
 insert into Project Values('C353','Database','MYSQL'),('C354','JAVA','Ecplise'),('C453','PYTHON','Pycharm');
 
