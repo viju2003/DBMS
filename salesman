@@ -7,8 +7,10 @@ insert into Emp(eno,ename,job,hiredate,salary,commision,deptno) values (01,'ABC'
 insert into Emp(eno,ename,job,hiredate,salary,commision,deptno) values (02,'PQR','salesman',2022/01/02,'1001','500','20');
 insert into Emp(eno,ename,job,hiredate,salary,commision,deptno) values (03,'XYZ','manager',2022/01/02,'1000','2500','10');
 insert into Emp(eno,ename,job,hiredate,salary,commision,deptno) values (04,'LMN','salesman',2022/01/02,'500','2500','20');
+insert into Emp(eno,ename,job,hiredate,salary,commision,deptno) values (05,'roy','manager',2022/01/02,'5000','2000','30');
 insert into dept (deptno,deptname,location) values ('10','production','Pune');
 insert into dept (deptno,deptname,location) values ('20','Marketing','Mumbai');
+insert into dept (deptno,deptname,location) values ('30','dev','latur');
 
 Solve Queries by SQL
 
