@@ -44,7 +44,7 @@ SELECT * FROM Hotel;
 SELECT COUNT(*) FROM Hotel;
 
 3. List the price and type of all rooms at the Grosvenor Hotel. 
-SELECT price, type FROM Room WHERE hotelNo = (SELECT hotelNo FROM Hotel WHERE name= ‘Grosvenor Hotel’);
+SELECT price, type FROM Room WHERE hotelNo = (SELECT hotelNo FROM Hotel WHERE name= ‘Grosvenor ’);
 
 4. List the number of rooms in each hotel. 
 SELECT hotelNo, COUNT(roomNo) AS count FROM Room GROUP BY hotelNo;
