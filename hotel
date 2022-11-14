@@ -181,9 +181,11 @@ select count(name) from Hotel;
 select type1 from Room;
 
 4. List the number of rooms in each hotel 
+SELECT h.hotelno ,COUNT(roomNo) AS count FROM Room r, Hotel h WHERE r.hotelno = h.hotelno ; 
 
 
 5. List all guests currently staying at the Grosvenor Hotel. 
+
 
 6. List all double or family rooms with a price below £40.00 per night, in ascending order of price. 
 SELECT * FROM Room WHERE price < '40' AND type1 IN ('double', 'family')
