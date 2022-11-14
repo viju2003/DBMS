@@ -91,7 +91,7 @@ Insert data into the above created tables.
 Use Question 9 Structure 
 
 a.	Display names of all branches located in city Bombay. 
-Select * from Branch where city=’Bombay’
+Select * from Branch where city='Bombay'
 
 b.	Display account no. and amount of depositors. 
 Select actno, amount from deposit
@@ -103,6 +103,8 @@ d.	Find the number of depositors in the bank
 select count (distinct cname) from deposit
 
 e.	Calculate Min,Max amount of customers. 
+ select max(amount) from customer
+  select min(amount) from customer
 
 f.	Create an index on deposit table
 create index deposit_index on deposit(actno);
@@ -125,6 +127,8 @@ a.	Display account date of customers Anil.
 Select adate form deposit where cname=’Anil’;
 
 b. Modify the size of attribute of amount in deposit
+alter table depositor alter column amount int(50)
+
 
 c. Display names of customers living in city pune.
 Select cname form customers where city=’Pune’
