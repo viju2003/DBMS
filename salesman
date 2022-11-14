@@ -69,7 +69,7 @@ Q.2
  insert into company (companyname , city)values('Yes Bank Corporation','A city');
  insert into company (companyname , city)values('More Bank Corporation','B city');
 
- create table works(employeename varchar(20),companyname varchar(20),salary double);
+ create table works(employeename varchar(20),companyname varchar(50),salary double);
  insert into works (employeename,companyname, salary)values('Neha','First Bank Corporation',40000);
  insert into works (employeename,companyname, salary)values('Reesha','Small Bank Corporation',30000);
  insert into works (employeename,companyname, salary)values('Ritika','No Bank Corporation',35000);
