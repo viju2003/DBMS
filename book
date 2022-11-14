@@ -70,6 +70,22 @@ select * from author where city='Korth';
 
 9. Create a procedure to update the value of page count of a book of given ISBN. 
 
+ DELIMITER // ;
+Create Procedure Update_book ( IN page_count INT, IN isbn varchar(20))
+    begin
+    update book
+    set
+    page_count = 77 where isbn = 0321228385;
+    end //
+
+   Delimiter ; //
+   CALL Update_studentinfo(77, '0321228385');
+   select * from book;
+
 10. Create a function that returns the price of book with a given ISBN.
+
+
+
+
 
 
