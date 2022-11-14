@@ -10,7 +10,7 @@ Booking contains details of the bookings and the primary key comprises (HotelNo,
 
 create table Hotel(hotelNo varchar(20) primary key , name varchar(40), city varchar (40));
 create table Room(roomno varchar(20)primary key,hotelno varchar (20),type varchar(20),price varchar(20));
-create table Booking(hotelNo varchar(20),guestno varchar(20),dateFrom varchar(20),dateTo varchar(20),roomno varchar(20));
+create table Booking(hotelNo varchar(20),guestno varchar(20),dateFrom varchar(50),dateTo varchar(50),roomno varchar(20));
 create table Guest(guestno varchar(20)primary key,guestname varchar(20),guestaddress varchar(50));
 
 insert into Hotel(hotelNo,name,city)values ('01','Grosvenor','Newyork');
