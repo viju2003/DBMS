@@ -54,33 +54,33 @@ Q.2
 3. company (company name, city) ,company name is primary key
 4. manages (employee name, manager name)
 
-create table employee(employeename varchar(20) primary key,street varchar(20),city varchar(20));
-insert into employee(employeename, street,city) values ('Neha','A street','A city');
-insert into employee(employeename, street,city) values ('Reesha','B street','B city');
-insert into employee(employeename, street,city) values ('Ritika','C street','C city');
-insert into employee(employeename, street,city) values ('Ritu','C street','C city');
-insert into employee(employeename, street,city) values ('Ryan','A street','A city');
-insert into employee(employeename, street,city) values ('Kelly','B street','B city');
+ create table employee(employeename varchar(20) primary key,street varchar(20),city varchar(20));
+ insert into employee(employeename, street,city) values ('Neha','A street','A city');
+ insert into employee(employeename, street,city) values ('Reesha','B street','B city');
+ insert into employee(employeename, street,city) values ('Ritika','C street','C city');
+ insert into employee(employeename, street,city) values ('Ritu','C street','C city');
+ insert into employee(employeename, street,city) values ('Ryan','A street','A city');
+ insert into employee(employeename, street,city) values ('Kelly','B street','B city');
 
-create table company(companyname varchar(20) primary key,city varchar(20));
-insert into company (companyname , city)values ('First Bank Corporation','A city');
-insert into company (companyname , city)values('Small Bank Corporation','B city');
-insert into company (companyname , city)values('No Bank Corporation','C city');
-insert into company (companyname , city)values('Yes Bank Corporation','A city');
-insert into company (companyname , city)values('More Bank Corporation','B city');
+ create table company(companyname varchar(20) primary key,city varchar(20));
+ insert into company (companyname , city)values ('First Bank Corporation','A city');
+ insert into company (companyname , city)values('Small Bank Corporation','B city');
+ insert into company (companyname , city)values('No Bank Corporation','C city');
+ insert into company (companyname , city)values('Yes Bank Corporation','A city');
+ insert into company (companyname , city)values('More Bank Corporation','B city');
 
-create table works(employeename varchar(20),companyname varchar(20),salary double);
-insert into works (employeename,companyname, salary)values('Neha','First Bank Corporation',40000);
-insert into works (employeename,companyname, salary)values('Reesha','Small Bank Corporation',30000);
-insert into works (employeename,companyname, salary)values('Ritika','No Bank Corporation',35000);
-insert into works (employeename,companyname, salary)values('Ritu','Small Bank Corporation',25000);
-insert into works (employeename,companyname, salary)values('Ryan','First Bank Corporation',15000);
-insert into works (employeename,companyname, salary)values('Kelly','First Bank Corporation',10000);
+ create table works(employeename varchar(20),companyname varchar(20),salary double);
+ insert into works (employeename,companyname, salary)values('Neha','First Bank Corporation',40000);
+ insert into works (employeename,companyname, salary)values('Reesha','Small Bank Corporation',30000);
+ insert into works (employeename,companyname, salary)values('Ritika','No Bank Corporation',35000);
+ insert into works (employeename,companyname, salary)values('Ritu','Small Bank Corporation',25000);
+ insert into works (employeename,companyname, salary)values('Ryan','First Bank Corporation',15000);
+ insert into works (employeename,companyname, salary)values('Kelly','First Bank Corporation',10000);
 
-create table manages(employeename varchar(20),managername varchar(20));
-insert into manages (employeename,managername )values ('Neha','Ryan');
-insert into manages (employeename,managername )values('Neha','Kelly');
-insert into manages (employeename,managername )values('Reesha','Ritu');
+ create table manages(employeename varchar(20),managername varchar(20));
+ insert into manages (employeename,managername )values ('Neha','Ryan');
+ insert into manages (employeename,managername )values('Neha','Kelly');
+ insert into manages (employeename,managername )values('Reesha','Ritu');
 
 Give an expression in SQL for each of the following queries.
 
