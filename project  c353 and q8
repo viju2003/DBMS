@@ -36,6 +36,7 @@ select Emp_name, A. Emp_id from A. Assigned_To A, Employee where project_id in (
 select Emp_name, A.emp_id from Assigned_to A, Employee where A.Project_id = 'C354' union select Emp_name, A.emp_id from Assigned_to A, Employee where A.Project_id = 'C353';
 
 5. Get employee numbers of employees who do not work on project C453
+select emp_name from assigned_to a, employee where project_id <> 'c453';
 
 8. 
 
