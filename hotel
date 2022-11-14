@@ -1,0 +1,270 @@
+Q.3 
+The following tables form part of a database held in a relational DBMS: 
+Hotel (HotelNo, Name, City) HotelNo is the primary key
+
+Room (RoomNo, HotelNo, Type, Price) 
+Booking (HotelNo, GuestNo, DateFrom, DateTo, RoomNo) 
+Guest (GuestNo, GuestName, GuestAddress) GuestNo is primary key 
+Room contains room details for each hotel and (HotelNo, RoomNo) forms the primary key.
+Booking contains details of the bookings and the primary key comprises (HotelNo, GuestNo and DateFrom) 
+
+create table Hotel(hotelNo varchar(20) primary key , name varchar(40), city varchar (40));
+create table Room(roomno varchar(20)primary key,hotelno varchar (20),type varchar(20),price varchar(20));
+create table Booking(hotelNo varchar(20),guestno varchar(20),dateFrom varchar(20),dateTo varchar(20),roomno varchar(20));
+create table Guest(guestno varchar(20)primary key,guestname varchar(20),guestaddress varchar(50));
+
+insert into Hotel(hotelNo,name,city)values ('01','Grosvenor','Newyork');
+insert into Hotel(hotelNo,name,city)values ('02','Indigo','Delhi');
+insert into Hotel(hotelNo,name,city)values ('03','Zen','London');
+insert into Hotel(hotelNo,name,city)values ('04','Italia','Chikago');
+insert into Hotel(hotelNo,name,city)values ('05','Bukhara','Los Angeles');
+
+insert into Room(roomno,hotelNo,type,price)values('11','01','suit','12000');
+insert into Room(roomno,hotelNo,type,price)values('13','01','presedential suit','100000');
+insert into Room(roomno,hotelNo,type,price)values('14','03','deluxe','8000');
+insert into Room(roomno,hotelNo,type,price)values('15','04','studio','15000');
+insert into Room(roomno,hotelNo,type,price)values('16','05','super deluxe','14000');
+
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','22',2022/08/02,2022/09/03,'11');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','23',2021/10/04,2021/10/05,'13');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('03','24',2020/07/08,2020/07/09,'14');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('05','25',2022/08/07,2022/08/08,'16');
+
+insert into Guest(guestno,guestname,guestaddress) values ('23','ABC','Newyork');
+insert into Guest(guestno,guestname,guestaddress) values ('24','ABC','London');
+insert into Guest(guestno,guestname,guestaddress) values ('25','ABC','Delhi');
+insert into Guest(guestno,guestname,guestaddress) values ('22','ABC','Mumbai');
+
+Solve following queries by SQL
+
+1. List full details of all hotels. 
+SELECT * FROM Hotel;
+
+2. How many hotels are there? 
+SELECT COUNT(*) FROM Hotel;
+
+3. List the price and type of all rooms at the Grosvenor Hotel. 
+SELECT price, type FROM Room WHERE hotelNo = (SELECT hotelNo FROM Hotel WHERE name= ‘Grosvenor Hotel’);
+
+4. List the number of rooms in each hotel. 
+SELECT hotelNo, COUNT(roomNo) AS count FROM Room GROUP BY hotelNo;
+
+5. Update the price of all rooms by 5%.
+Update Room set price=price+5;
+
+6. List full details of all hotels in London. 
+SELECT * FROM Hotel WHERE city = ‘London’;
+
+7. What is the average price of a room? 
+SELECT AVG(price) FROM Room;
+
+8. List all guests currently staying at the Grosvenor Hotel. 
+SELECT * FROM Guest WHERE guestno = (SELECT guestNo FROM Booking WHERE dateFrom <= CURRENT_DATE AND dateTo >= CURRENT_DATE AND hotelNo = (SELECT hotelNo FROM Hotel WHERE name = ‘Grosvenor’));
+
+9. List the number of rooms in each hotel in London. 
+SELECT hotelNo, COUNT(roomNo) AS count FROM Room r, Hotel h WHERE r.hotelNo = h.hotelNo AND city = ‘London’ GROUP BY hotelNo;
+
+10.Create one view on above database and query it.
+create view show as select hotelno,name from Hotel;
+if it gives error then put show (i.e view_name in square brackets [ ])
+
+
+Q4. 
+
+The following tables form part of a database held in a relational DBMS: 
+Hotel (HotelNo, Name, City) HotelNo is primary key 
+Room (RoomNo, HotelNo, Type, Price) 
+Booking (HotelNo, GuestNo, DateFrom, DateTo, RoomNo)
+Guest (GuestNo, GuestName, GuestAddress) GuestNo is primary key
+create table Hotel(hotelno varchar(20) primary key , name varchar(40), city varchar (40));
+create table Room(roomno varchar(20)primary key,hotelno varchar (20),type varchar(20),price varchar(20));
+create table Booking(hotelno varchar(20),guestno varchar(20),datefrom varchar(20),dateto varchar(20),roomno varchar(20));
+create table Guest(guestno varchar(20)primary key,guestname varchar(20),guestaddress varchar(50));
+
+insert into Hotel(hotelno,name,city)values ('01','Grosvenor','Newyork');
+insert into Hotel(hotelno,name,city)values ('02','Indigo','Delhi');
+insert into Hotel(hotelno,name,city)values ('03','Zen','London');
+insert into Hotel(hotelno,name,city)values ('04','Italia','Chikago');
+insert into Hotel(hotelno,name,city)values ('05','Bukhara','Los Angeles');
+
+insert into Room(roomno,hotelno,type1,price)values('11','01','double','12000');
+insert into Room(roomno,hotelno,type1,price)values('13','01','presedential suit','100000');
+insert into Room(roomno,hotelno,type1,price)values('14','03','deluxe','8000');
+insert into Room(roomno,hotelno,type1,price)values('15','04','studio','15000');
+insert into Room(roomno,hotelno,type1,price)values('16','05','family','14000');
+
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','22','2022/08/02','2022/08/03','11');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','23','2021/10/04','2021/10/05','13');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('03','24','2020/07/08','2020/07/09','14');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('05','25','2022/08/07','2022/08/08','16');
+
+insert into Guest(guestno,guestname,guestaddress) values ('23','ABC','Newyork');
+insert into Guest(guestno,guestname,guestaddress) values ('24','ABC','London');
+insert into Guest(guestno,guestname,guestaddress) values ('25','ABC','Delhi');
+insert into Guest(guestno,guestname,guestaddress) values ('22','ABC','Mumbai');
+
+ Solve following queries by SQL 
+
+1. What is the total revenue per night from all double rooms? 
+select SUM(price)from Room where type1 = 'double';
+
+2. List the details of all rooms at the Grosvenor Hotel, including the name of the guest staying in the room, if the room is occupied. 
+SELECT r.* FROM Room r LEFT JOIN (SELECT g.guestname, h.hotelno, b.roomno FROM Guest g, Booking b, Hotel h WHERE g.guestno = b.guestno AND b.hotelno = h.hotelno AND name='Grosvenor' AND datefrom <= CURRENT_DATE AND dateto >= CURRENT_DATE) AS XXX ON r.hotelno = XXX.hotelno AND r.roomno = XXX.roomno;
+
+3. What is the average number of bookings for each hotel in April? 
+SELECT COUNT(DISTINCT guestNo) FROM BookingWHERE (datefrom <='2022-08-01' AND dateto>='2022-08-01') OR (datefrom >='2022-08-01' AND datefrom <= '2022-08-31');
+
+4. Create index on one of the field and show is performance in query. 
+CREATE INDEX showON Hotel (hotelno, name);
+
+5. List full details of all hotels. 
+select h.hotelno,h.name,h.city,r.type1,r.price from Hotel h, Room r ;
+
+6. List full details of all hotels in London. 
+SELECT * FROM Hotel WHERE city = 'London';
+
+7. Update the price of all rooms by 5%. 
+update Room set price = price + 5; 
+ select  * from Room;
+
+8. List the number of rooms in each hotel in London. 
+SELECT h.hotelno ,COUNT(roomNo) AS count FROM Room r, Hotel h WHERE r.hotelno = h.hotelno AND city = 'London' GROUP BY hotelno; 
+
+9. List all double or family rooms with a price below £40.00 per night, in ascending order of price
+SELECT * FROM Room WHERE price < '40' AND type1 IN ('double', 'family')
+ ORDER BY price;
+
+Q.5
+
+The following tables form part of a database held in a relational DBMS: 
+Hotel (HotelNo, Name, City) HotelNo is the primary key 
+Room (RoomNo, HotelNo, Type, Price) 
+Booking (HotelNo, GuestNo, DateFrom, DateTo, RoomNo) 
+Guest (GuestNo, GuestName, GuestAddress) 
+
+create table Hotel(hotelno varchar(20) primary key , name varchar(40), city varchar (40));
+create table Room(roomno varchar(20)primary key,hotelno varchar (20),type varchar(20),price varchar(20));
+create table Booking(hotelno varchar(20),guestno varchar(20),datefrom varchar(20),dateto varchar(20),roomno varchar(20));
+create table Guest(guestno varchar(20)primary key,guestname varchar(20),guestaddress varchar(50));
+
+insert into Hotel(hotelno,name,city)values ('01','Grosvenor','Newyork');
+insert into Hotel(hotelno,name,city)values ('02','Indigo','Delhi');
+insert into Hotel(hotelno,name,city)values ('03','Zen','London');
+insert into Hotel(hotelno,name,city)values ('04','Italia','Chikago');
+insert into Hotel(hotelno,name,city)values ('05','Bukhara','Los Angeles');
+
+insert into Room(roomno,hotelno,type1,price)values('11','01','double','12000');
+insert into Room(roomno,hotelno,type1,price)values('13','01','presedential suit','100000');
+insert into Room(roomno,hotelno,type1,price)values('14','03','deluxe','8000');
+insert into Room(roomno,hotelno,type1,price)values('15','04','studio','15000');
+insert into Room(roomno,hotelno,type1,price)values('16','05','family','14000');
+
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','22','2022/08/02','2022/08/03','11');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','23','2021/10/04','2021/10/05','13');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('03','24','2020/07/08','2020/07/09','14');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('05','25','2022/08/07','2022/08/08','16');
+
+insert into Guest(guestno,guestname,guestaddress) values ('23','ABC','Newyork');
+insert into Guest(guestno,guestname,guestaddress) values ('24','ABC','London');
+insert into Guest(guestno,guestname,guestaddress) values ('25','ABC','Delhi');
+insert into Guest(guestno,guestname,guestaddress) values ('22','ABC','Mumbai');
+
+Solve following queries by SQL 
+
+1. List full details of all hotels. 
+select h.hotelno,h.name,h.city,r.type1,r.price from Hotel h, Room r ;
+
+2. How many hotels are there?
+select count(name) from Hotel;
+
+3. List the price and type of all rooms at the Grosvenor Hotel.
+select type1 from Room;
+
+4. List the number of rooms in each hotel 
+
+
+5. List all guests currently staying at the Grosvenor Hotel. 
+
+6. List all double or family rooms with a price below £40.00 per night, in ascending order of price. 
+SELECT * FROM Room WHERE price < '40' AND type1 IN ('double', 'family')
+ ORDER BY price;
+
+7. How many different guests have made bookings for August? 
+select guestno from Booking where datefrom between '2022/08/01' and '2022/08/31';
+
+8. What is the total income from bookings for the Grosvenor Hotel today? 
+
+9. What is the most commonly booked room type for each hotel in London? 
+select MAX(type1) from Room where hotelno = '01';
+
+10. Update the price of all rooms by 5%.
+Update Room set price=price+5;
+
+
+Q.6
+
+The following tables form part of a database held in a relational DBMS: 
+Hotel (HotelNo, Name, City)
+Room (RoomNo, HotelNo, Type, Price) 
+Booking (HotelNo, GuestNo, DateFrom, DateTo, RoomNo)
+Guest (GuestNo, GuestName, GuestAddress) 
+
+create table Hotel(hotelno varchar(20) primary key , name varchar(40), city varchar (40));
+create table Room(roomno varchar(20)primary key,hotelno varchar (20),type varchar(20),price varchar(20));
+create table Booking(hotelno varchar(20),guestno varchar(20),datefrom varchar(20),dateto varchar(20),roomno varchar(20));
+create table Guest(guestno varchar(20)primary key,guestname varchar(20),guestaddress varchar(50));
+
+insert into Hotel(hotelno,name,city)values ('01','Grosvenor','Newyork');
+insert into Hotel(hotelno,name,city)values ('02','Indigo','Delhi');
+insert into Hotel(hotelno,name,city)values ('03','Zen','London');
+insert into Hotel(hotelno,name,city)values ('04','Italia','Chikago');
+insert into Hotel(hotelno,name,city)values ('05','Bukhara','Los Angeles');
+
+insert into Room(roomno,hotelno,type1,price)values('11','01','double','12000');
+insert into Room(roomno,hotelno,type1,price)values('13','01','presedential suit','100000');
+insert into Room(roomno,hotelno,type1,price)values('14','03','deluxe','8000');
+insert into Room(roomno,hotelno,type1,price)values('15','04','studio','15000');
+insert into Room(roomno,hotelno,type1,price)values('16','05','family','14000');
+
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','22','2022/08/02','2022/08/03','11');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','23','2021/10/04','2021/10/05','13');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('03','24','2020/07/08','2020/07/09','14');
+insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('05','25','2022/08/07','2022/08/08','16');
+
+insert into Guest(guestno,guestname,guestaddress) values ('23','ABC','Newyork');
+insert into Guest(guestno,guestname,guestaddress) values ('24','ABC','London');
+insert into Guest(guestno,guestname,guestaddress) values ('25','ABC','Delhi');
+insert into Guest(guestno,guestname,guestaddress) values ('22','ABC','Mumbai');
+
+Solve following queries by SQL 
+
+1. List full details of all hotels. 
+select h.hotelno,h.name,h.city,r.type1,r.price from Hotel h, Room r ;
+
+2. List full details of all hotels in London. 
+SELECT * FROM Hotel WHERE city = 'London';
+
+3. List all guests currently staying at the Grosvenor Hotel. 
+select * from Booking where dateto >= '2022/11/11';
+
+4. List the names and addresses of all guests in London, alphabetically ordered by name. 
+select guestname , guestaddress from Guest where guestaddress = 'London' order by guestname;
+
+5. List the bookings for which no date_to has been specified. 
+select * from Booking where dateto = 'null';
+
+6. How many hotels are there? 
+select count(name) from Hotel;
+
+7. List the rooms that are currently unoccupied at the Grosvenor Hotel. 
+
+8. What is the lost income from unoccupied rooms at each hotel today? 
+
+9. Create index on one of the field and show is performance in query. 
+CREATE INDEX showON Hotel (hotelno, name);
+
+10. Create one view on above database and query it
+CREATE VIEW hotel_view ASSELECT name, cityFROM  Hotel;
+UPDATE hotel_view SET name = 'India meal' WHERE name = 'Indigo';    (query on view)
+select * from hotel_view;
+
