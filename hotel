@@ -87,11 +87,11 @@ insert into Hotel(hotelno,name,city)values ('03','Zen','London');
 insert into Hotel(hotelno,name,city)values ('04','Italia','Chikago');
 insert into Hotel(hotelno,name,city)values ('05','Bukhara','Los Angeles');
 
-insert into Room(roomno,hotelno,type1,price)values('11','01','double','12000');
-insert into Room(roomno,hotelno,type1,price)values('13','01','presedential suit','100000');
-insert into Room(roomno,hotelno,type1,price)values('14','03','deluxe','8000');
-insert into Room(roomno,hotelno,type1,price)values('15','04','studio','15000');
-insert into Room(roomno,hotelno,type1,price)values('16','05','family','14000');
+insert into Room(roomno,hotelno,type,price)values('11','01','double','12000');
+insert into Room(roomno,hotelno,type,price)values('13','01','presedential suit','100000');
+insert into Room(roomno,hotelno,type,price)values('14','03','deluxe','8000');
+insert into Room(roomno,hotelno,type,price)values('15','04','studio','15000');
+insert into Room(roomno,hotelno,type,price)values('16','05','family','14000');
 
 insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','22','2022/08/02','2022/08/03','11');
 insert into Booking (hotelno,guestno,datefrom,dateto,roomno)values('01','23','2021/10/04','2021/10/05','13');
